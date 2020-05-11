@@ -27,8 +27,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'y!91-bo#2ud!jzz#^x-s-y5j$yd5+n
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
 
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', False) )
-
+#DEBUG = bool( os.environ.get('DJANGO_DEBUG', False) )
+Debu = True
 ALLOWED_HOSTS = [ 'rocky-badlands-33936.herokuapp.com', '192.168.1.3']
 
 
