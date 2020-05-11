@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'y!91-bo#2ud!jzz#^x-s-y5j$yd5+n
 
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = [ 'rocky-badlands-33936.herokuapp.com']
+ALLOWED_HOSTS = [ 'rocky-badlands-33936.herokuapp.com',]
 
 
 # Application definition
