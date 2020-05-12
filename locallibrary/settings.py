@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'y!91-bo#2ud!jzz#^x-s-y5j$yd5+n+wnq7pce41ue2fyl9-2%')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG =  bool( os.environ.get('DJANGO_DEBUG', False) )
 
 #DEBUG = bool( os.environ.get('DJANGO_DEBUG', False) )
 
@@ -119,6 +120,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+EMAIL_USE_TLS = True
+EMAIL_HOST ='smpt.mail.ru'
+EMAIL_HOST_USER = 'email@gmail.com'
+EMAIL_HOST_PASSWORD = 'password'
+EMAIL_PORT = 587
+ADMINS =[
+ (''Name,'mr.munchaev@mail.ru'),
+ ]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -141,3 +150,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # The URL to use when referring to static files (where they will be served from)
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+WHITENOISE_USE_FINDERS = True
+STATIC_ROOT = None
+django_heroku.settings(locals()) #В конце
