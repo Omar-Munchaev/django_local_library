@@ -126,7 +126,7 @@ EMAIL_HOST_USER = 'email@gmail.com'
 EMAIL_HOST_PASSWORD = 'password'
 EMAIL_PORT = 587
 ADMINS =[
- (''Name,'mr.munchaev@mail.ru'),
+ ('Omar','mr.munchaev@mail.ru'),
  ]
 
 # Static files (CSS, JavaScript, Images)
